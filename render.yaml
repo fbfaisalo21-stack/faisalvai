@@ -1,0 +1,4 @@
+from telethon import TelegramClient
+c = TelegramClient("sess", API_ID, API_HASH)
+c.start()   # নম্বর + OTP দিবেন
+print(c.session.save())
