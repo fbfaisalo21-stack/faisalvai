@@ -1,13 +1,13 @@
 import os
 from telethon import TelegramClient, events
 
-api_id = int(os.environ["33477255"])
-api_hash = os.environ["c28a9f60651fec7d570badf4fe5f23c1"]
+api_id = int(os.environ["API_ID"])
+api_hash = os.environ["API_HASH"]
 session_str = os.environ.get("SESSION")
 
 OFFLINE_MSG = "🙏 এখন আমি অফলাইনে আছি। অনলাইনে আসলে রিপ্লাই দেবো। ধন্যবাদ!"
 
-client = TelegramClient("sess", api_id, api_hash)
+client = TelegramClient(session_str, api_id, api_hash)
 offline = {"mode": True}
 
 @client.on(events.NewMessage(incoming=True))
